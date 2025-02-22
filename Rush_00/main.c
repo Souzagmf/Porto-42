@@ -1,6 +1,6 @@
 #include <unistd.h>
-#include "Rush.c"
-
+#include "Rush.c"   /* add all code of Rush.c  */
+ 
 int	main(void)
 {
 	rush(6, 6);
