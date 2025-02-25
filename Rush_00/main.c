@@ -3,6 +3,6 @@
  
 int	main(void)
 {
-	rush(6, 6);
+	rush(15, 15);
 	return (0);
 }
