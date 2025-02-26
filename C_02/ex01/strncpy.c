@@ -12,7 +12,7 @@ int main(void)
 	index = 0;
 	ft_strncpy(str_destiny, str_source, size_pretend);
 
-	while(index < size_pretend)
+	while(index < size_pretend) //Just print the string destiny
 	{
 		printf("Dest: %c  || Pos: %d\n", str_destiny[index], index);
 		index++;
@@ -22,14 +22,17 @@ int main(void)
 char *ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	index;
-
+	if(src != NULL) //Breake case NULL
+	{
+		return (0);
+	}
 	index = 0;
-	while(index < n && src[index] != '\0')
+	while(index < n && src[index] != '\0') //Add to destiny 
 	{
 		dest[index] = src[index];
 		index++;
 	}
-	while (index < n)
+	while (index < n) //Add '\0' to rest of the string
 	{
 		dest[index] = '\0';
 		index++;

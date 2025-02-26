@@ -21,7 +21,7 @@ int	ft_str_is_alpha(char *str)
 
 	referencia = 1;
 	index = 0;
-	if(str[index] != '\0')
+	if(str[index] != '\0' && str != NULL)
 	{
 		while(str[index] != '\0')
 		{
