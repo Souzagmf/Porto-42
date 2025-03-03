@@ -1,15 +1,18 @@
 #include <stdio.h>
+#include <string.h>
 
 int ft_strcmp(char *s1, char *s2);
 
 int main(void)
 {
-    char arr_string_1[] = "No man's sky";
+    char arr_string_1[] = "No mans's sky";
     char arr_string_2[] = "No mans sky";
-    int result;
+    int result, result2;
 
     result = ft_strcmp(arr_string_1, arr_string_2);
+    result2 = strcmp(arr_string_1, arr_string_2);
     printf("%d\n", result);
+    printf("%d\n", result2);
 }
 
 int ft_strcmp(char *s1, char *s2)
