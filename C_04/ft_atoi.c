@@ -8,18 +8,11 @@ int	*convert_num(char *str);
 
 int main(int argc, char **argv)
 {
-	//int *nums;
 	if (argc != 2)
 	{
 		return (0);
 	}
 	ft_atoi(argv[1]);
-	//nums = convert_num(argv[1]);
-	/*while(*nums)
-	{
-		printf("%d", *nums);
-		nums++;
-	}*/
 	return (0);
 }
 
@@ -35,7 +28,7 @@ int	ft_atoi(char *str)
 	isNegative = false;
 	while (*str)
 	{
-		if (*str >= '0' && *str <= '9') //caso seja um numero 
+		if (*str >= '0' && *str <= '9')
 		{
 			if (*(str - 1) == '-')
 			{
@@ -65,7 +58,8 @@ int	ft_atoi(char *str)
 
 int *convert_num(char *str)
 {
-	static int	num_conv[10];
+	int	limit_max;
+	static int	num_conv[9];
 	int	counter;
 	int	index;
 
@@ -75,7 +69,7 @@ int *convert_num(char *str)
 	{
 		if(!(str[index] >= '0' && str[index] <= '9'))
 			return (NULL);
-		if(index >= 10)
+		if(index >= 9)
 			break;
 		num_conv[index] = str[index] - '0';
 		index++;
