@@ -6,20 +6,20 @@
 /*   By: gabmiran <gabmiran@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:08:30 by gabmiran          #+#    #+#             */
-/*   Updated: 2025/03/04 11:30:16 by gabmiran         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:51:00 by gabmiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <unistd.h>
 
 void	ft_putnbr(int nb);
 void	ft_putstr(char *str);
-/*
+
 int	main(void)
 {
 	int	number;
 
-	number = 42;
+	number = 5698;
 	ft_putnbr(number);
 }
 */
@@ -27,8 +27,8 @@ int	main(void)
 void	ft_putnbr(int nb)
 {
 	char	conversion[2];
-	
-	if(nb == -2147483648 || nb == 2147483647)
+
+	if (nb <= -2147483648 || nb >= 2147483647)
 		return ;
 	if (nb < 0)
 	{
