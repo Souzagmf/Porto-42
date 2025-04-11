@@ -3,6 +3,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
+
 NAME = libft.a
 
 all: $(NAME)
@@ -12,17 +13,15 @@ $(NAME): $(OBJ)
 	ar rcs $@ $^
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $<
-
-nm:
-	norminette
+	@$(CC) $(CFLAGS) -c $<
 
 clear:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
 
 fclear:
 	rm -rf $(NAME)
 
 erase: fclear clear
 
-re: fclear all
+#Recompile the file
+re: erase all

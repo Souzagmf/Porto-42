@@ -18,5 +18,10 @@ int ft_strncmp(const char *source, const char *compare, size_t max);
 const char *ft_strrchr(const char *str, char c);
 int ft_tolower(int c);
 int ft_toupper(int c);
+char *ft_strnstr(const char *haystack, const char *needle, size_t len);
+void *ft_memset(void *p_src, int s_copy, size_t byte_n);
+void *ft_memcpy(void *dest, const void *src, size_t bytes);
+void *ft_memmove(void *dest, const void *src, size_t bytes);
+void *ft_memchr(const void *s, int c, size_t n);
 
 #endif

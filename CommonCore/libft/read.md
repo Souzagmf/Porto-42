@@ -1,11 +1,6 @@
-• memset
-• memcpy
-• memmove
-• memchr
-• memcmp
-• strnstr - 
 
-----------------------------
+
+---------------------------
 • calloc
 • strdup
 
