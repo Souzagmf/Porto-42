@@ -1,18 +1,18 @@
 
 
 ---------------------------
-• calloc
-• strdup
+• calloc <<<<<<<<<>>>>>>>>>
+• strdup <<<<<<<<<>>>>>>>>>
 
 ******** -- ********
 
-Function ft_substr
+Function ft_substr !!!!!!!!!!!!
 
 char *ft_substr(char const *s, unsigned int start,
 size_t len);
 *********************************************************
 
-ft_strjoin
+ft_strjoin !!!!!!!!!!!
 
 char *ft_strjoin(char const *s1, char const *s2);
 

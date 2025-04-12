@@ -1,14 +1,14 @@
 #include "lib/libft.h"
 #include <stdio.h>
-
 int main(void)
 {
-	char dest[100];
-	void *algo;
-	char *src = "Flores do amanhacer";
+	char *dest;
+	char *str1 = "Flores do";
+	char *str2 = " amanhacer";
 
-	algo = ft_memcpy(dest, src, ft_strlen(src) + 1);
+	dest = ft_strjoin(str1, str2);
 
-	printf("1:%p\n2:%s\n\n", algo, dest);
+	printf("Dest: %s\n\n", dest);
+	
 	return (0);
 }

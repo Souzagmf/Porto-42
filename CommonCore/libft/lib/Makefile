@@ -10,7 +10,7 @@ all: $(NAME)
 
 #create the "libft.a" with all dependencies
 $(NAME): $(OBJ)
-	ar rcs $@ $^
+	@ar rcs $@ $^
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $<
@@ -18,10 +18,8 @@ $(NAME): $(OBJ)
 clear:
 	@rm -rf $(OBJ)
 
-fclear:
-	rm -rf $(NAME)
-
-erase: fclear clear
+fclear: clear
+	@rm -rf $(NAME)
 
 #Recompile the file
-re: erase all
+re: fclear all

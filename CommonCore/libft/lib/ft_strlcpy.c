@@ -9,7 +9,7 @@ unsigned int ft_strlcpy(char *destiny, const char *source, size_t size)
 		src_size++;
 	if (size == 0)
 		return (src_size);
-	while ((size - 1) > 0)
+	while (size > 0)
 	{
 		*destiny = *source;
 		destiny++;
