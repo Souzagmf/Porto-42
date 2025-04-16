@@ -1,5 +1,9 @@
 #include "libft.h"
 
+/*
+    Return a cut of a STRING and create a SUBSTRING and return a pointer to new word
+*/
+
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char *sub;

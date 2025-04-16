@@ -1,6 +1,8 @@
 #include "libft.h"
 #include <stdlib.h>
 
+// size-bounded string concatenation.
+
 size_t ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t size_dest;

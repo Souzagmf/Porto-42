@@ -1,26 +1,17 @@
-#include <stdio.h>
 #include "libft.h"
 
-// Return a pointer for the first occurency of "c" in "str"
+// Return a pointer for the first occurency of "c" in "s"
 
-char *ft_strchr(const char *str, char c)
+char *ft_strchr(const char *s, int c)
 {
 
-	while (*str)
+	while (*s)
 	{
-		if (*str == c)
-		{
-			return (char *)str;
-		}
-
-		str++;
+		if (*s == (char)c)
+			return (char *)s;
+		s++;
 	}
+	if ((char)c == *s)
+		return ((char *)s);
 	return NULL;
 }
-/*
-int main(void)
-{
-	const char *str = "Hello, World!!";
-
-	printf("%s\n", ft_strchr(str, 'l'));
-}*/

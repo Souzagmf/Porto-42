@@ -1,19 +1,19 @@
 // #include <stdio.h>
 #include "libft.h"
 
-int ft_strlen(const char *str)
+int ft_strlen(const char *s)
 {
-	int i;
+	int index;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	index = 0;
+	while (s[index])
+		index++;
+	return (index);
 }
 /*
 int main()
 {
-	char *str = "Hello, World!";
-	printf("Length of string: %d\n", ft_strlen(str));
+	char *s = "Hello, World!";
+	printf("Length of string: %d\n", ft_strlen(s));
 	return 0;
 }*/

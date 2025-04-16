@@ -1,24 +1,19 @@
-#include <string.h>
 #include "libft.h"
-const char *ft_strrchr(const char *str, char c)
+
+// Return a pointer for the last occurency of "c" in "s"
+
+char *ft_strrchr(const char *s, int c)
 {
 	const char *last_point;
 
 	last_point = NULL;
-	while (*str)
+	while (*s)
 	{
-		if (*str == c)
-			last_point = str;
-		str++;
+		if (*s == (char)c)
+			last_point = s;
+		s++;
 	}
-	return last_point;
+	if ((char)c == *s)
+		return ((char *)s);
+	return (char *)last_point;
 }
-
-/*
-#include <stdio.h>
-int main(void)
-{
-	char *str = "Hello, World!!";
-	printf("%s\n", ft_strrchr(str, 'l'));
-}
-*/

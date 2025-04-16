@@ -2,13 +2,11 @@
 #include <stdio.h>
 int main(void)
 {
-	char *dest;
-	char *str1 = "Flores do";
-	char *str2 = " amanhacer";
+	int n = 15698;
 
-	dest = ft_strjoin(str1, str2);
+	ft_putendl_fd("*****TESTE****", 1);
+	// Test uppercase conversion
+	ft_putstr_fd(ft_itoa(n), 1);
 
-	printf("Dest: %s\n\n", dest);
-	
 	return (0);
 }

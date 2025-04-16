@@ -1,5 +1,7 @@
 #include "libft.h"
 
+// Copy bytes of string 
+
 void *ft_memmove(void *dest, const void *src, size_t bytes)
 {
 	unsigned char *_dest;

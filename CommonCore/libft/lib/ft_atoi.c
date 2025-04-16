@@ -1,25 +1,27 @@
 #include "libft.h"
 #include <stdlib.h>
-
-int ft_atoi(unsigned char *str)
+/*
+	Convert (CHAR) to (INT)
+*/
+int ft_atoi(unsigned char *s)
 {
 	int neg;
 	int res;
 
 	res = 0;
 	neg = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-' || *str == '+')
+	while ((*s >= 9 && *s <= 13) || *s == 32)
+		s++;
+	if (*s == '-' || *s == '+')
 	{
-		if (*str == '-')
+		if (*s == '-')
 			neg = 1;
-		str++;
+		s++;
 	}
-	while (*str >= 48 && *str <= 57)
+	while (*s >= 48 && *s <= 57)
 	{
-		res = (res * 10) + (*str - '0');
-		str++;
+		res = (res * 10) + (*s - '0');
+		s++;
 	}
 	if (neg != 0)
 		res = -res;
@@ -40,11 +42,11 @@ int main(void)
 		"  -456",
 		"789abc"};
 
-	for (int i = 0; i < 5; i++)
+	for (int index = 0; index < 5; index++)
 	{
-		printf("Testing: \"%s\"\n", test_strings[i]);
-		printf("ft_atoi: %d\n", ft_atoi((unsigned char *)test_strings[i]));
-		printf("atoi:    %d\n\n", atoi(test_strings[i]));
+		printf("Testing: \"%s\"\n", test_strings[index]);
+		printf("ft_atoi: %d\n", ft_atoi((unsigned char *)test_strings[index]));
+		printf("atoi:    %d\n\n", atoi(test_strings[index]));
 	}
 
 	return 0;

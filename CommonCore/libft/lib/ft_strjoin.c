@@ -3,6 +3,7 @@
 /*
     Concatenate 2 strings and return a pointer to new string
 */
+
 char *ft_strjoin(char const *s1, char const *s2)
 {
     size_t lenS1;
@@ -14,10 +15,10 @@ char *ft_strjoin(char const *s1, char const *s2)
     lenS2 = ft_strlen(s2);
     join = (char *)malloc(sizeof(char) * (lenS1 + lenS2));
     ptr = join;
-    if(!join)
+    if (!join)
         return (NULL);
 
-    while(*s1)
+    while (*s1)
     {
         *join = *s1;
         s1++;
@@ -30,7 +31,6 @@ char *ft_strjoin(char const *s1, char const *s2)
         join++;
     }
     join = '\0';
-    
 
     return (ptr);
 }

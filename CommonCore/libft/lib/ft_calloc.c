@@ -1,5 +1,7 @@
 #include "libft.h"
-
+/*
+    memory allocation
+*/
 void* ft_calloc(size_t num, size_t size){
     char *ptr;
 

@@ -1,5 +1,7 @@
 #include "libft.h"
 
+// Copy a string
+
 void *ft_memcpy(void *dest, const void *src, size_t bytes)
 {
 	unsigned char *_dest;
