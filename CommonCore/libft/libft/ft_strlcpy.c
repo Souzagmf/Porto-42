@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Gabmiran <Gabmiran@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 11:53:16 by Gabmiran          #+#    #+#             */
-/*   Updated: 2025/04/17 11:53:33 by Gabmiran         ###   ########.fr       */
+/*   Created: 2025/04/17 11:54:08 by Gabmiran          #+#    #+#             */
+/*   Updated: 2025/04/17 14:58:58 by Gabmiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <stdio.h>
-int main(void)
-{
-	char *s = "Life-its-not-a-stramberry";
-	char **st = ft_split(s, '-');
-	int i = 0;
-	while (st[i])
-	{
-		ft_putendl_fd(st[i], 1);
-		ft_isalpha()
-		i++;
-	}
+#include "libft.h"
 
-	return (0);
+// size-bounded string copy.
+
+unsigned int	ft_strlcpy(char *destiny, const char *source, size_t size)
+{
+	unsigned int	src_size;
+
+	src_size = 0;
+	while (source[src_size])
+		src_size++;
+	if (size == 0)
+		return (src_size);
+	while (size > 0)
+	{
+		*destiny = *source;
+		destiny++;
+		source++;
+		size--;
+	}
+	*destiny = '\0';
+	return (src_size);
 }

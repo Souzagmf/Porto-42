@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Gabmiran <Gabmiran@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 11:53:16 by Gabmiran          #+#    #+#             */
-/*   Updated: 2025/04/17 11:53:33 by Gabmiran         ###   ########.fr       */
+/*   Created: 2025/04/17 11:54:08 by Gabmiran          #+#    #+#             */
+/*   Updated: 2025/04/17 14:31:58 by Gabmiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <stdio.h>
-int main(void)
-{
-	char *s = "Life-its-not-a-stramberry";
-	char **st = ft_split(s, '-');
-	int i = 0;
-	while (st[i])
-	{
-		ft_putendl_fd(st[i], 1);
-		ft_isalpha()
-		i++;
-	}
+#include "libft.h"
 
-	return (0);
+//	locate byte in byte string.
+
+void	*ft_memchr(const void *src, int ch, size_t bytes)
+{
+	size_t			index;
+	unsigned char	*_src;
+
+	index = 0;
+	_src = (unsigned char *)src;
+	while (index < bytes)
+	{
+		if (_src[index] == (unsigned char)ch)
+			return (&_src[index]);
+		index++;
+	}
+	return (NULL);
 }

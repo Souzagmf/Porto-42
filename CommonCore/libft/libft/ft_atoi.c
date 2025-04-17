@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Gabmiran <Gabmiran@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 11:53:16 by Gabmiran          #+#    #+#             */
-/*   Updated: 2025/04/17 11:53:33 by Gabmiran         ###   ########.fr       */
+/*   Created: 2025/04/17 11:54:08 by Gabmiran          #+#    #+#             */
+/*   Updated: 2025/04/17 11:54:19 by Gabmiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <stdio.h>
-int main(void)
+#include "libft.h"
+#include <stdlib.h>
+/*
+	Convert (CHAR) to (INT)
+*/
+int ft_atoi(const char *s)
 {
-	char *s = "Life-its-not-a-stramberry";
-	char **st = ft_split(s, '-');
-	int i = 0;
-	while (st[i])
-	{
-		ft_putendl_fd(st[i], 1);
-		ft_isalpha()
-		i++;
-	}
+	int neg;
+	int res;
 
-	return (0);
+	res = 0;
+	neg = 0;
+	while ((*s >= 9 && *s <= 13) || *s == 32)
+		s++;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			neg = 1;
+		s++;
+	}
+	while (*s >= 48 && *s <= 57)
+	{
+		res = (res * 10) + (*s - '0');
+		s++;
+	}
+	if (neg != 0)
+		res = -res;
+	return (res);
 }
