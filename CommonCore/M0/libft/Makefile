@@ -1,6 +1,6 @@
 #Variables
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CC = cc
+CFLAGS = -Wall -Wextra -Werror 
 SRC = ft_isalnum.c \
 	ft_isascii.c \
 	ft_isalpha.c \
@@ -22,7 +22,6 @@ SRC = ft_isalnum.c \
 	ft_strrchr.c \
 	ft_strnstr.c \
 	ft_strncmp.c \
-	ft_strcmp.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
 	ft_putchar_fd.c \
@@ -44,16 +43,16 @@ all: $(NAME)
 
 #create the "libft.a" with all dependencies
 $(NAME): $(OBJ)
-	@ar rcs $@ $^
+	ar rcs $@ $^
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $<
 
 clean:
-	@rm -rf $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
-	@rm -rf $(NAME)
+	rm -rf $(NAME)
 
 #Recompile the file
 re: fclean all
