@@ -6,7 +6,7 @@
 /*   By: Gabmiran <Gabmiran@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:54:08 by Gabmiran          #+#    #+#             */
-/*   Updated: 2025/04/17 14:58:58 by Gabmiran         ###   ########.fr       */
+/*   Updated: 2025/05/16 23:11:06 by Gabmiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 // size-bounded string copy.
 
-unsigned int	ft_strlcpy(char *destiny, const char *source, size_t size)
+size_t	ft_strlcpy(char *destiny, const char *source, size_t size)
 {
-	unsigned int	src_size;
+	const char	*ptr;
 
-	src_size = 0;
-	while (source[src_size])
-		src_size++;
+	ptr = source;
 	if (size == 0)
-		return (src_size);
-	while (size > 0)
+		return (ft_strlen(ptr));
+	while (((size - 1) > 0) && *source)
 	{
 		*destiny = *source;
 		destiny++;
@@ -31,5 +29,5 @@ unsigned int	ft_strlcpy(char *destiny, const char *source, size_t size)
 		size--;
 	}
 	*destiny = '\0';
-	return (src_size);
+	return (ft_strlen(ptr));
 }

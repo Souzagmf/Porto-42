@@ -6,7 +6,7 @@
 /*   By: Gabmiran <Gabmiran@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:54:08 by Gabmiran          #+#    #+#             */
-/*   Updated: 2025/04/17 11:54:19 by Gabmiran         ###   ########.fr       */
+/*   Updated: 2025/05/16 23:24:23 by Gabmiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 /*
 	Convert (CHAR) to (INT)
 */
-int ft_atoi(const char *s)
+int	ft_atoi(const char *s)
 {
-	int neg;
-	int res;
+	int	neg;
+	int	res;
 
 	res = 0;
 	neg = 0;

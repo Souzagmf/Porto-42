@@ -6,7 +6,7 @@
 /*   By: Gabmiran <Gabmiran@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 14:39:45 by Gabmiran          #+#    #+#             */
-/*   Updated: 2025/04/17 14:48:57 by Gabmiran         ###   ########.fr       */
+/*   Updated: 2025/05/18 17:42:15 by Gabmiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	free_split(char **split, size_t count)
 	size_t	i;
 
 	i = 0;
-	while (i < count)
+	while (i <= count)
 	{
 		free(split[i]);
 		i++;
@@ -32,59 +32,51 @@ static int	word_count(char const *str, char sep)
 
 	i = 0;
 	count = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		if (str[i] && str[i] != sep)
-		{
+		if (str[i] != sep && (str[i + 1] == sep || str[i + 1] == '\0'))
 			count++;
-			while (str[i] != sep)
-				i++;
-		}
-		else
-			i++;
+		i++;
 	}
 	return (count);
 }
 
-static char	**split_words(char **result, char const *str, char sep)
+static char *ft_strndup(const char *s, size_t n)
 {
-	size_t	start;
-	size_t	index_letter;
-	size_t	index_words;
+	char	*ptr;
 
-	index_letter = 0;
-	index_words = index_letter;
-	start = index_letter;
-	while (str[index_letter])
-	{
-		if (str[index_letter] && str[index_letter] != sep)
-		{
-			start = index_letter;
-			while (str[index_letter] != sep)
-				index_letter++;
-			result[index_words] = ft_substr(str, start, index_letter - start);
-			if (!result[index_words])
-			{
-				free_split(result, index_words);
-				return (NULL);
-			}
-			index_words++;
-		}
-		index_letter++;
-	}
-	return (result);
+	ptr = (char *) malloc(sizeof(char) * (n + 1));
+	if(ptr == NULL)
+		return (NULL);
+	ft_strlcpy(ptr, s, n + 1);
+	return (ptr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	size_t	count;
+	char	**splited;
+	int 	word;
+	int		start;
+	int		end;
 
-	if (!s)
+	splited = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
+	if (!s || !splited)
 		return (NULL);
-	count = word_count(s, c);
-	result = (char **)ft_calloc(count + 1, sizeof(char *));
-	if (!result)
-		return (NULL);
-	return (split_words(result, s, c));
+	word = 0;
+	start = 0;
+	end = 0;
+	while (word < word_count(s, c))
+	{
+		while (s[end] == c)
+			end++;
+		start = end;
+		while (s[end] != c && s[end] != '\0')
+			end++;
+		splited[word] = ft_strndup(&s[start], end - start);
+		if (!splited[word])
+			return (free_split(splited, word), NULL);
+		word++;
+	}
+	splited[word] = NULL;
+	return (splited);
 }

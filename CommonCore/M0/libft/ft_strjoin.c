@@ -6,7 +6,7 @@
 /*   By: Gabmiran <Gabmiran@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:54:08 by Gabmiran          #+#    #+#             */
-/*   Updated: 2025/04/17 14:56:16 by Gabmiran         ###   ########.fr       */
+/*   Updated: 2025/05/17 13:54:46 by Gabmiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,12 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len1;
-	size_t	len2;
 	char	*join;
-	char	*ptr;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	join = (char *)malloc(sizeof(char) * (len1 + len2));
-	ptr = join;
+	join = (char *)malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
 	if (!join)
 		return (NULL);
-	while (*s1)
-	{
-		*join = *s1;
-		s1++;
-		join++;
-	}
-	while (*s2)
-	{
-		*join = *s2;
-		s2++;
-		join++;
-	}
-	*join = '\0';
-	return (ptr);
+	ft_strlcpy(join, s1, ft_strlen(s1) + 1);
+	ft_strlcat(join, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
+	return (join);
 }
